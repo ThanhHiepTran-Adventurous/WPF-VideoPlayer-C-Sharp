@@ -39,5 +39,10 @@ namespace VideoPlayer
         {
             mediaElement1.Stop();
         }
+
+        private void slider_vol_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mediaElement1.Volume = (double)slider_vol.Value;
+        }
     }
 }
