@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 namespace VideoPlayer
 {
     /// <summary>
@@ -20,9 +20,18 @@ namespace VideoPlayer
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer;  
         public MainWindow()
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(500);
+            timer.Tick += new EventHandler(timer_Tick);
+        }
+
+        private void timer_Tick(object? sender, EventArgs e)
+        {
+            slider_seek.Value = mediaElement1.Position.TotalSeconds;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -48,6 +57,24 @@ namespace VideoPlayer
         private void slider_seek_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             mediaElement1.Position = TimeSpan.FromSeconds(slider_seek.Value);
+        }
+
+        private void Window_Drop(object sender, DragEventArgs e)
+        {
+            string filename = (string)((DataObject)e.Data).GetFileDropList()[0];
+            mediaElement1.Source = new Uri(filename);
+
+            mediaElement1.LoadedBehavior = MediaState.Manual;
+            mediaElement1.UnloadedBehavior = MediaState.Manual;
+            mediaElement1.Volume = (double)slider_vol.Value;
+            mediaElement1.Play();
+        }
+
+        private void mediaElement1_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            TimeSpan ts = mediaElement1.NaturalDuration.TimeSpan;
+            slider_seek.Maximum = ts.TotalSeconds;
+            timer.Start();
         }
     }
 }
