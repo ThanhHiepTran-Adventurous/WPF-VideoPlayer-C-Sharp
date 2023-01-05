@@ -9,8 +9,8 @@
     <Grid>
         <MediaElement HorizontalAlignment="Left" Name="mediaElement1" Height="262" VerticalAlignment="Top" Width="509"/>
         <Button Content="Play" Height="23" HorizontalAlignment="Left" Margin="0,263,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Button Content="Pause" Height="23" HorizontalAlignment="Left" Margin="73,263,0,0" Name="button2" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="153,263,0,0" Name="button3" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.497,0.629"/>
+        <Button Content="Pause" Height="23" HorizontalAlignment="Left" Margin="73,263,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="153,263,0,0" Name="button3" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.497,0.629" Click="button3_Click"/>
         <Slider HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top" Name="slider_seek" Width="505"/>
         <Slider HorizontalAlignment="Left" Margin="394,263,0,0" VerticalAlignment="Top" Name="slider_vol" Width="120" Maximum="1" LargeChange="0.1" SmallChange="0.01" Value="1"/>
 
