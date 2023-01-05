@@ -5,19 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoPlayer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" AllowDrop="True">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220*"/>
-            <ColumnDefinition Width="59*"/>
-            <ColumnDefinition Width="246*"/>
-        </Grid.ColumnDefinitions>
-        <MediaElement HorizontalAlignment="Left" Height="262" VerticalAlignment="Top" Width="509" Grid.ColumnSpan="3"/>
+        <MediaElement HorizontalAlignment="Left" Height="262" VerticalAlignment="Top" Width="509"/>
         <Button Content="Play" Height="23" HorizontalAlignment="Left" Margin="0,263,0,0" Name="button1" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Pause" Height="23" HorizontalAlignment="Center" Margin="0,263,0,0" Name="button2" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="153,263,0,0" Name="button3" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.497,0.629" Grid.ColumnSpan="2"/>
-        <Slider HorizontalAlignment="Left" Margin="10,306,0,0" VerticalAlignment="Top" Name="slider_seek" Width="505" Grid.ColumnSpan="3"/>
-        <Slider HorizontalAlignment="Left" Margin="115,263,0,0" VerticalAlignment="Top" Name="slider_vol" Width="120" Grid.Column="2"/>
+        <Button Content="Pause" Height="23" HorizontalAlignment="Left" Margin="73,263,0,0" Name="button2" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Stop" Height="23" HorizontalAlignment="Left" Margin="153,263,0,0" Name="button3" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.497,0.629"/>
+        <Slider HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top" Name="slider_seek" Width="505"/>
+        <Slider HorizontalAlignment="Left" Margin="394,263,0,0" VerticalAlignment="Top" Name="slider_vol" Width="120" Maximum="1" LargeChange="0.1" SmallChange="0.01" Value="1"/>
 
     </Grid>
 </Window>
