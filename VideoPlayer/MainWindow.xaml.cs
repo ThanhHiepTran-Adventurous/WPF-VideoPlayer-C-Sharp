@@ -24,5 +24,20 @@ namespace VideoPlayer
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement1.Play();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement1.Pause();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement1.Stop();
+        }
     }
 }
