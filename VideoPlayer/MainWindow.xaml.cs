@@ -44,5 +44,10 @@ namespace VideoPlayer
         {
             mediaElement1.Volume = (double)slider_vol.Value;
         }
+
+        private void slider_seek_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mediaElement1.Position = TimeSpan.FromSeconds(slider_seek.Value);
+        }
     }
 }
